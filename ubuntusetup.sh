@@ -14,7 +14,7 @@ add-apt-repository "deb http://archive.canonical.com/ lucid-updates partner"
 add-apt-repository "deb-src http://archive.canonical.com/ lucid-updates partner"
 aptitude update
 
-exit
+echo "export HISTSIZE=999999999999; export HISTFILESIZE=9999999999999" >> ~/.bashrc
 
 read -p 'hostname? '
 echo $REPLY > /etc/hostname
@@ -43,4 +43,24 @@ git config --global user.name "Paul Bohm"
 git config --global user.email enki@bbq.io
 
 cd /root/Projects
-for x in git@github.com:enki/bbq.git git@github.com:enki/cassandra.git git@github.com:enki/enkihelpers.git git@github.com:enki/python-gearman.git git@github.com:enki/tornado.git git@github.com:enki/tragedy.git; do git clone $x; done
+for x in git@github.com:enki/bbq.git git@github.com:enki/cassandra.git git@github.com:enki/enkihelpers.git git@github.com:enki/python-gearman.git git@github.com:enki/tornado.git; do git clone $x; done
+
+git clone -b newindex git@github.com:enki/tragedy.git
+
+echo "mkdir -p /root/virtualenvs" >> ~/.bashrc
+echo "export WORKON_HOME=/root/virtualenvs" >> ~/.bashrc
+echo ". /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
+export WORKON_HOME=/root/virtualenvs
+. /usr/local/bin/virtualenvwrapper.sh
+
+mkvirtualenv bbq
+workon bbq
+
+add2virtualenv /root/Projects/tornado
+add2virtualenv /root/Projects/bbq
+add2virtualenv /root/Projects/enkihelpers
+add2virtualenv /root/Projects/python-gearman
+add2virtualenv /root/Projects/tragedy
+
+pip install thrift
+pip install poster
