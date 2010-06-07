@@ -14,7 +14,7 @@ add-apt-repository "deb http://archive.canonical.com/ lucid-updates partner"
 add-apt-repository "deb-src http://archive.canonical.com/ lucid-updates partner"
 aptitude update
 
-echo "export HISTSIZE=999999999999; export HISTFILESIZE=9999999999999" >> ~/.bashrc
+echo "export HISTSIZE=999999999; export HISTFILESIZE=999999999" >> ~/.bashrc
 
 read -p 'hostname? '
 echo $REPLY > /etc/hostname
