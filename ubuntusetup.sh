@@ -21,6 +21,8 @@ echo $REPLY > /etc/hostname
 hostname $REPLY
 echo "127.0.0.1 $REPLY" >> /etc/hosts
 
+mkdir /root/Projects
+
 echo grub-pc grub2/linux_cmdline string | sudo debconf-set-selections
 echo grub-pc grub-pc/install_devices_empty boolean true | sudo debconf-set-selections
 
@@ -31,6 +33,8 @@ aptitude -y install build-essentials binutils-doc debian-keyring debian-maintain
 pip install virtualenvwrapper
 
 update-alternatives --set editor /usr/bin/vim.nox
+
+read -p 'time to install ec2 certs'
 A=`echo /root/certs/pk-*.pem`
 echo "export EC2_PRIVATE_KEY=$A" >> /root/.bashrc
 A=`echo /root/certs/cert-*.pem`
@@ -38,4 +42,5 @@ echo "export EC2_CERT=$A" >> /root/.bashrc
 git config --global user.name "Paul Bohm"
 git config --global user.email enki@bbq.io
 
-
+cd /root/Projects
+for x in git@github.com:enki/bbq.git git@github.com:enki/cassandra.git git@github.com:enki/enkihelpers.git git@github.com:enki/python-gearman.git git@github.com:enki/tornado.git git@github.com:enki/tragedy.git; do git clone $x; done
