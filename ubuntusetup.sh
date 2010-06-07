@@ -38,3 +38,4 @@ echo "export EC2_CERT=$A" >> /root/.bashrc
 git config --global user.name "Paul Bohm"
 git config --global user.email enki@bbq.io
 
+
