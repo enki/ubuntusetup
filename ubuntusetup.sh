@@ -1,17 +1,17 @@
-add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ lucid universe"
-add-apt-repository "deb-src http://us.archive.ubuntu.com/ubuntu/ lucid universe"
-add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates universe"
-add-apt-repository "deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates universe"
+add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ maverick universe"
+add-apt-repository "deb-src http://us.archive.ubuntu.com/ubuntu/ maverick universe"
+add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ maverick-updates universe"
+add-apt-repository "deb-src http://us.archive.ubuntu.com/ubuntu/ maverick-updates universe"
 
-add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse"
-add-apt-repository "deb-src http://us.archive.ubuntu.com/ubuntu/ lucid multiverse"
-add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates multiverse"
-add-apt-repository "deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates multiverse"
+add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ maverick multiverse"
+add-apt-repository "deb-src http://us.archive.ubuntu.com/ubuntu/ maverick multiverse"
+add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ maverick-updates multiverse"
+add-apt-repository "deb-src http://us.archive.ubuntu.com/ubuntu/ maverick-updates multiverse"
 
-add-apt-repository "deb http://archive.canonical.com/ lucid partner"
-add-apt-repository "deb-src http://archive.canonical.com/ lucid partner"
-add-apt-repository "deb http://archive.canonical.com/ lucid-updates partner"
-add-apt-repository "deb-src http://archive.canonical.com/ lucid-updates partner"
+add-apt-repository "deb http://archive.canonical.com/ maverick partner"
+add-apt-repository "deb-src http://archive.canonical.com/ maverick partner"
+add-apt-repository "deb http://archive.canonical.com/ maverick-updates partner"
+add-apt-repository "deb-src http://archive.canonical.com/ maverick-updates partner"
 aptitude update
 
 echo "export HISTSIZE=999999999; export HISTFILESIZE=999999999" >> ~/.bashrc
